@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Password Generator by Ar</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="box">
+        <h1>Password Generator</h1>
+        <div class="lengthCount">
+          <p>Length</p>
+          <label for="count">
+            <input type="number" id="count" />
+          </label>
+        </div>
+        <div class="range">
+          <input type="range" id="range" min="1" max="100" />
+        </div>
+        <div class="checkBox">
+          <label for="smallAlpa">
+            <input type="checkbox" id="smallAlpa" /><span>(A-Z)</span>
+          </label>
+          <label for="capitalAlpa">
+            <input type="checkbox" id="capitalAlpa" /><span>(a-z)</span>
+          </label>
+          <label for="number">
+            <input type="checkbox" id="number" /><span>0123456789</span>
+          </label>
+          <label for="charactor">
+            <input type="checkbox" id="charactor" /><span
+              >!@#$%^&*(-)_=+.,?\/</span
+            >
+          </label>
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
