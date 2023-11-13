@@ -1,95 +1,60 @@
-// var paas = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+";
-// var generatePass = "";
-// for (i = 0; i < 12; i++) {
-//   var pass = paas[Math.floor(Math.random() * paas.length)];
-//   generatePass += pass;
+// var charachtor = "ABCDabcd2345@#$%";
+// var generatingPass = "";
+
+// for (var i = 0; i < 12; i++) {
+//   var pass = charachtor[Math.floor(Math.random() * charachtor.length)];
+//   generatingPass += pass;
 // }
-// document.write(generatePass);
+// document.write(generatingPass);
 
-// var password = ["ABCD", "abcd", "!@#$"];
-// var generatePass = "";
-// for (i = 0; i < password.length; i++) {
-//   var pass = password[Math.floor(Math.random() * password.length)];
-//   generatePass += pass;
-// }
-// document.write(generatePass);
-
-// var smallAlphaCheckboxes = document.querySelectorAll("#inlineCheckbox1");
-// var capitalAlphaCheckboxes = document.querySelectorAll("#inlineCheckbox2");
-// var specialCharaCheckboxes = document.querySelectorAll("#inlineCheckbox3");
-// var numberCheckboxes = document.querySelectorAll("#inlineCheckbox4");
-
-// function getCheckedValues(checkboxes) {
-//   var checkedValues = [];
-//   for (var i = 0; i < checkboxes.length; i++) {
-//     if (checkboxes[i].checked) {
-//       checkedValues.push(checkboxes[i].value);
-//     }
-//   }
-//   return checkedValues;
-// }
-
-var UppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var LowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
-var SpecialCharacters = "!@#$%^&*(/)_<=]{,+}[|;.>:'?-";
-// var Numbers = "0123456789";
+var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+var specialCharacters = "!@#$%^&*(/)_<=]{,+}[|;.>:'?-";
+var numbers = "0123456789";
 
 var smallAlpha = document.querySelectorAll("#smallCheckBox");
 var capitalAlpha = document.querySelectorAll("#capitalCheckBox");
 var specialChara = document.querySelectorAll("#specialCheckBox");
-// var number = document.querySelectorAll("#numberCheckBox");
-
-function getCheckedValues(checkboxes) {
-  var checkedValue = [];
-  for (var i = 0; i < checkboxes.length; i++) {
-    if (checkboxes[i].checked) {
-      checkedValue.push(checkboxes[i].value);
-    }
-  }
-  return checkedValue;
-}
-
-var smallAlphaValues = getCheckedValues(smallAlpha);
-var capitalAlphaValues = getCheckedValues(capitalAlpha);
-var specialCharaValues = getCheckedValues(specialChara);
-
-console.log(smallAlphaValues, capitalAlphaValues, specialCharaValues);
-// var numberValues = getCheckedValues(number);
-
-// if (numberValues) {
-//   pass.push(Numbers);
-// }
+var number = document.querySelectorAll("#numberCheckBox");
 
 function generatePass() {
+  function getCheckedValues(checkboxes) {
+    var checkedValue = [];
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+        checkedValue.push(checkboxes[i].value);
+      }
+    }
+    return checkedValue;
+  }
+
+  var smallAlphaValues = getCheckedValues(smallAlpha);
+  var capitalAlphaValues = getCheckedValues(capitalAlpha);
+  var specialCharaValues = getCheckedValues(specialChara);
+  var numberValues = getCheckedValues(number);
+
   var pass = [];
   var generatePass = "";
-  
-  console.log(smallAlphaValues);
-  if (smallAlphaValues.check) {
-    pass.push(LowercaseLetters);
+
+  if (smallAlphaValues.length > 0) {
+    pass.push(...lowercaseLetters);
   }
-  console.log(capitalAlphaValues);
-  if (capitalAlphaValues.check) {
-    pass.push(UppercaseLetters);
+  if (capitalAlphaValues.length > 0) {
+    pass.push(...uppercaseLetters);
   }
-  console.log(specialCharaValues);
-  if (specialCharaValues) {
-    pass.push(SpecialCharacters);
+  if (specialCharaValues.length > 0) {
+    pass.push(...specialCharacters);
+  }
+  if (numberValues.length > 0) {
+    pass.push(...numbers);
   }
 
-  console.log("after push ==>", pass);
-
-  for (i = 0; i < 6; i++) {
+  for (var i = 0; i < 12; i++) {
     var getPass = pass[Math.floor(Math.random() * pass.length)];
     generatePass += getPass;
   }
 
   var displayPass = document.getElementById("displayPass");
   displayPass.value = generatePass;
-  console.log(generatePass);
+  console.log("generated pass ==>", generatePass);
 }
-
-// console.log("Small Alpha Values: " + smallAlphaValues);
-// console.log("Capital Alpha Values: " + capitalAlphaValues);
-// console.log("Special Character Values: " + specialCharaValues);
-// console.log("Number Values: " + numberValues);
