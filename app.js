@@ -52,6 +52,8 @@ function getCheckedValues(checkboxes) {
 var smallAlphaValues = getCheckedValues(smallAlpha);
 var capitalAlphaValues = getCheckedValues(capitalAlpha);
 var specialCharaValues = getCheckedValues(specialChara);
+
+console.log(smallAlphaValues, capitalAlphaValues, specialCharaValues);
 // var numberValues = getCheckedValues(number);
 
 // if (numberValues) {
@@ -61,21 +63,21 @@ var specialCharaValues = getCheckedValues(specialChara);
 function generatePass() {
   var pass = [];
   var generatePass = "";
-
+  
+  console.log(smallAlphaValues);
   if (smallAlphaValues.check) {
     pass.push(LowercaseLetters);
-    console.log(smallAlphaValues);
   }
+  console.log(capitalAlphaValues);
   if (capitalAlphaValues.check) {
     pass.push(UppercaseLetters);
-    console.log(capitalAlphaValues);
   }
+  console.log(specialCharaValues);
   if (specialCharaValues) {
     pass.push(SpecialCharacters);
-    console.log(specialCharaValues);
   }
 
-  console.log("after push ==>",pass);
+  console.log("after push ==>", pass);
 
   for (i = 0; i < 6; i++) {
     var getPass = pass[Math.floor(Math.random() * pass.length)];
