@@ -68,7 +68,8 @@ i.p-hidden {
 .strongPass > i {
   color: green;
 }
-.strongPass {
+.strongPass,
+.weakPass {
   display: none;
 }
 .weakPass > i {

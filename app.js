@@ -1,6 +1,5 @@
 var inputDisplay = document.getElementById("inputDisplay"); // Display input
-var strongPass = document.querySelector(".strongPass"); // Strong Password Div
-var weakPass = document.querySelector(".weakPass"); // Weak Password Div
+
 var clipBoard = document.querySelector("#clipBoard"); // Weak Password Div
 var copyInput = document.querySelector(".copy"); // Copy input
 var copiedInput = document.querySelector(".copied"); // Copied input
@@ -45,6 +44,9 @@ clipBoard.addEventListener("click", () => {
 // Checking If Check Box Checked
 
 function generatePass() {
+  copiedInput.style.display = "none";
+  copyInput.style.display = "block";
+
   var capitalLetters = document.querySelector("#capitalLetters"); // Capital Letters Check Box
   var smallLetters = document.querySelector("#smallLetters"); // Small Letters Check Box
   var numbers = document.querySelector("#numbers"); // Numbers Check Box
@@ -56,7 +58,7 @@ function generatePass() {
   var number0To9 = "0123456789";
 
   function getCheckedValues(checkboxes) {
-    var checkedValue = [];  
+    var checkedValue = [];
     for (var i = 0; i < checkboxes.length; i++) {
       if (checkboxes[i].checked) {
         checkedValue.push(checkboxes[i].value);
@@ -86,9 +88,19 @@ function generatePass() {
   }
   var generatePassword = "";
 
-  for (var i = 0; i < 12; i++) {
+  for (var i = 0; i < rangeBar.value; i++) {
     var getPass = pass[Math.floor(Math.random() * pass.length)];
     generatePassword += getPass;
+  }
+  var strongPass = document.querySelector(".strongPass"); // Strong Password Div
+  var weakPass = document.querySelector(".weakPass"); // Weak Password Div
+
+  if (generatePassword.length >= 12) {
+    weakPass.style.display = "none";
+    strongPass.style.display = "block";
+  } else {
+    weakPass.style.display = "block";
+    strongPass.style.display = "none";
   }
 
   inputDisplay.value = generatePassword;
