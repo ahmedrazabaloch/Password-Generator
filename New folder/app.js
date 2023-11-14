@@ -10,7 +10,7 @@
 var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
 var specialCharacters = "!@#$%^&*(/)_<=]{,+}[|;.>:'?-";
-var numbers = "0123456789";
+var number0To9 = "0123456789";
 
 var smallAlpha = document.querySelectorAll("#smallCheckBox");
 var capitalAlpha = document.querySelectorAll("#capitalCheckBox");
