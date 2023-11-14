@@ -56,18 +56,27 @@
             </div>
             <div class="checkboxes">
               <!-- CheckBox -->
-              <input type="checkbox" id="capitalLetters" checked />
+              <input
+                type="checkbox"
+                id="capitalLetters"
+                value="capitalLetters"
+                checked
+              />
               <label for="capitalLetters">A-Z</label>
-              <input type="checkbox" id="smallLetters" />
+              <input type="checkbox" id="smallLetters" value="smallLetters" />
               <label for="smallLetters">a-z</label>
-              <input type="checkbox" id="numbers" />
+              <input type="checkbox" id="numbers" value="numbers" />
               <label for="numbers">0-9</label>
-              <input type="checkbox" id="specialCharacters" />
+              <input
+                type="checkbox"
+                id="specialCharacters"
+                value="specialCharacters"
+              />
               <label for="specialCharacters">@#$</label>
             </div>
           </div>
           <!-- Button -->
-          <button id="btn">Generate Passowrd</button>
+          <button id="btn" onclick="generatePass()">Generate Passowrd</button>
         </div>
       </div>
     </main>

@@ -18,6 +18,7 @@ var specialChara = document.querySelectorAll("#specialCheckBox");
 var number = document.querySelectorAll("#numberCheckBox");
 
 function generatePass() {
+  
   function getCheckedValues(checkboxes) {
     var checkedValue = [];
     for (var i = 0; i < checkboxes.length; i++) {
