@@ -99,6 +99,7 @@ rangeBar.addEventListener("change", () => {
 
 // Copy ClipBoard
 var empty = document.querySelector(".empty").style;
+var emptyCheckBox = document.querySelector(".emptyCheckBox").style;
 clipBoard.addEventListener("click", () => {
   if (inputDisplay.value == "") {
     empty.display = "block";
@@ -113,7 +114,6 @@ clipBoard.addEventListener("click", () => {
   }
 });
 
-// Checking If Check Box Checked
 var strongPass = document.querySelector(".strongPass"); // Strong Password Div
 var weakPass = document.querySelector(".weakPass"); // Weak Password Div
 
@@ -132,6 +132,7 @@ function generatePass() {
   var specialCharacters = "!@#$%^&*(/)_<=]{,+}[|;.>:'?-";
   var number0To9 = "0123456789";
 
+  // Checking If Check Box Checked
   function getCheckedValues(checkboxes) {
     var checkedValue = [];
     for (var i = 0; i < checkboxes.length; i++) {
@@ -166,6 +167,10 @@ function generatePass() {
   for (var i = 0; i < rangeBar.value; i++) {
     var getPass = pass[Math.floor(Math.random() * pass.length)];
     generatePassword += getPass;
+    if (generatePassword === "undefined") {
+      generatePassword = "";
+      break;
+    }
   }
 
   if (
@@ -183,5 +188,4 @@ function generatePass() {
   }
 
   inputDisplay.value = generatePassword;
-  console.log("generated pass ==>", generatePassword);
 }

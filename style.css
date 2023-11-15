@@ -95,7 +95,8 @@ i.p-hidden {
 }
 .strongPass,
 .weakPass,
-.empty {
+.empty,
+.emptyCheckBox {
   display: none;
 }
 .weakPass > i {
