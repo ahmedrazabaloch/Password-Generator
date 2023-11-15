@@ -33,12 +33,23 @@ rangeBar.addEventListener("change", () => {
 });
 
 // Copy ClipBoard
+var passField = document.getElementById("passField");
 clipBoard.addEventListener("click", () => {
-  inputDisplay.select();
-  document.execCommand("copy");
+  if (inputDisplay.value == "") {
+    console.log("worked");
+    passField.innerHTML = `
+    <div class="">
+       <i class="fa-solid fa-circle-xmark"></i>
+      Can't copy empty field
+    </div>
+    `;
+  } else {
+    inputDisplay.select();
+    document.execCommand("copy");
 
-  copiedInput.style.display = "block";
-  copyInput.style.display = "none";
+    copiedInput.style.display = "block";
+    copyInput.style.display = "none";
+  }
 });
 
 // Checking If Check Box Checked

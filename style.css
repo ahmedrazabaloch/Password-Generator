@@ -60,9 +60,16 @@ i.p-hidden {
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s linear;
+}
+.copy:hover {
+  background-color: #ffa400;
 }
 .copied {
   display: none;
+}
+.copied:hover {
+  cursor: url("checkdouble.svg"), auto;
 }
 /* <!-- Password Checker --> */
 .strongPass > i {
@@ -106,4 +113,9 @@ span#rangeDisplay {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  background-color: #ffd700;
+  transition: all 0.3s linear;
+}
+#btn:hover {
+  background-color: #ffa400;
 }
