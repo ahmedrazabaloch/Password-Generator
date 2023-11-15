@@ -33,22 +33,16 @@ rangeBar.addEventListener("change", () => {
 });
 
 // Copy ClipBoard
-var passField = document.getElementById("passField");
 clipBoard.addEventListener("click", () => {
   if (inputDisplay.value == "") {
-    console.log("worked");
-    passField.innerHTML = `
-    <div class="">
-       <i class="fa-solid fa-circle-xmark"></i>
-      Can't copy empty field
-    </div>
-    `;
+    copyInput.disabled;
+    copyInput.style.cursor = "not-allowed";
   } else {
     inputDisplay.select();
     document.execCommand("copy");
-
     copiedInput.style.display = "block";
     copyInput.style.display = "none";
+    copyInput.style.hover ="unset"
   }
 });
 
