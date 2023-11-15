@@ -76,10 +76,14 @@ i.p-hidden {
   color: green;
 }
 .strongPass,
-.weakPass {
+.weakPass,
+.empty {
   display: none;
 }
 .weakPass > i {
+  color: #ff5733;
+}
+.empty {
   color: #ff5733;
 }
 /* <!-- Range Bar --> */

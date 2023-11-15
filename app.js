@@ -33,22 +33,27 @@ rangeBar.addEventListener("change", () => {
 });
 
 // Copy ClipBoard
+var empty = document.querySelector(".empty").style;
 clipBoard.addEventListener("click", () => {
   if (inputDisplay.value == "") {
-    copyInput.disabled;
-    copyInput.style.cursor = "not-allowed";
+    empty.display = "block";
+    weakPass.style.display = "none";
+    strongPass.style.display = "none";
   } else {
+    empty.display = "none";
     inputDisplay.select();
     document.execCommand("copy");
     copiedInput.style.display = "block";
     copyInput.style.display = "none";
-    copyInput.style.hover ="unset"
   }
 });
 
 // Checking If Check Box Checked
+var strongPass = document.querySelector(".strongPass"); // Strong Password Div
+var weakPass = document.querySelector(".weakPass"); // Weak Password Div
 
 function generatePass() {
+  empty.display = "none";
   copiedInput.style.display = "none";
   copyInput.style.display = "block";
 
@@ -97,10 +102,14 @@ function generatePass() {
     var getPass = pass[Math.floor(Math.random() * pass.length)];
     generatePassword += getPass;
   }
-  var strongPass = document.querySelector(".strongPass"); // Strong Password Div
-  var weakPass = document.querySelector(".weakPass"); // Weak Password Div
 
-  if (generatePassword.length >= 12) {
+  if (
+    generatePassword.length >= 8 &&
+    capitalLettersChecked.length > 0 &&
+    smallLettersChecked.length > 0 &&
+    numbersChecked.length > 0 &&
+    specialCharactersChecked.length > 0
+  ) {
     weakPass.style.display = "none";
     strongPass.style.display = "block";
   } else {
