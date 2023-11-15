@@ -19,17 +19,28 @@ body {
   margin: 50px auto;
   border-radius: 15px;
   text-align: center;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.demo-Heading {
+  /* position: relative; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 #demo {
   padding: 10px 20px;
-  position: absolute;
-  left: 50px;
+  /* position: absolute; */
+  /* left: 0px; */
   border: 1px solid #ffa400;
   background: transparent;
   border-radius: 5px;
   font-weight: 500;
   cursor: pointer;
+  height: 40px;
   transition: all 0.3s linear;
 }
 #demo:hover {
@@ -37,7 +48,10 @@ body {
   color: #fff;
 }
 .box h1 {
-  margin-bottom: 35px;
+  /* width: 100%;
+  margin: 0 auto;
+  margin-bottom: 35px; */
+  font-size: 2.5em;
 }
 .display {
   position: relative;
