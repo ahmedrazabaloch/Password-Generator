@@ -5,6 +5,71 @@ var copyInput = document.querySelector(".copy"); // Copy input
 var copiedInput = document.querySelector(".copied"); // Copied input
 var generatePassBtn = document.querySelector("#btn"); // Password Generator Button
 
+// Demo Driver-JS
+
+var demo = document.getElementById("demo");
+
+const driver = window.driver.js.driver;
+
+const driverObj = driver({
+  showProgress: true,
+  steps: [
+    {
+      element: ".display",
+      popover: {
+        title: "Display",
+        description: "Generated Passowrd Field",
+      },
+    },
+    {
+      element: ".p-show",
+      popover: {
+        title: "Show & Hide",
+        description: "You can hide your generated password by clicking this",
+      },
+    },
+    {
+      element: ".copy",
+      popover: {
+        title: "Copy to clipboard",
+        description: "Copy your generated password",
+      },
+    },
+    {
+      element: "#rangeBar",
+      popover: {
+        title: "Set range of password",
+        description: "Set the range of password by using scroll",
+      },
+    },
+    {
+      element: "#rangeValueDiv",
+      popover: {
+        title: "Character Length",
+        description: "You can see your password length here",
+      },
+    },
+    {
+      element: ".checkboxes",
+      popover: {
+        title: "Choose Character",
+        description: "Check box for choosing password characters",
+      },
+    },
+    {
+      element: "#btn",
+      popover: {
+        title: "Generate Password",
+        description: "Generate your password",
+      },
+    },
+  ],
+});
+
+demo.addEventListener("click", () => {
+  driverObj.drive();
+});
+
 // Show & Hide Password
 var passShowIcon = document.querySelector(".p-show"); // Password Show icon
 var passHideIcon = document.querySelector(".p-hidden"); // Password Hide icon

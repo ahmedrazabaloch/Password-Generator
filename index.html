@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Strong Password Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -17,6 +22,7 @@
   <body>
     <main class="container">
       <div class="box">
+        <button id="demo">Demo</button>
         <h1>Passowrd Generator</h1>
         <div class="displayBox">
           <!-- Display Value Input -->
@@ -24,7 +30,7 @@
             <input
               type="text"
               id="inputDisplay"
-              placeholder="STr0^g P@$$w0r|)"
+              placeholder="STr0^g P@$$w0r|>"
             />
             <!-- Password Show/Hidden -->
             <div class="passIcon">
@@ -67,7 +73,7 @@
           </div>
           <!--Range Value & CheckBox -->
           <div class="checkBox-Container">
-            <div>
+            <div id="rangeValueDiv">
               <!-- Range value -->
               <p>Character Length:<span id="rangeDisplay">12</span></p>
             </div>
