@@ -5,13 +5,10 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-:root {
-  ---primaryColor: #5cdb95;
-  ---secondaryColor: #fff;
-}
 
 body {
-  background-color: var(---primaryColor);
+  background-color: #ffd700;
+
 }
 .container {
   width: 100%;
@@ -19,9 +16,14 @@ body {
 .box {
   width: 60%;
   padding: 50px;
-  background-color: var(---secondaryColor);
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  background-color: #fff;
   margin: 50px auto;
   border-radius: 15px;
+  text-align: center;
+}
+.box h1 {
+  margin-bottom: 35px;
 }
 .display {
   position: relative;
@@ -33,6 +35,7 @@ body {
   outline: none;
   font-size: 24px;
   border-radius: 5px;
+  border: 1px solid rgba(255, 213, 0, 0.5);
 }
 /* <!-- Password Show/Hidden --> */
 .passIcon {
@@ -119,7 +122,9 @@ span#rangeDisplay {
   cursor: pointer;
   background-color: #ffd700;
   transition: all 0.3s linear;
+  font-weight: 500;
 }
 #btn:hover {
   background-color: #ffa400;
+  color: #fff;
 }
