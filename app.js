@@ -6,12 +6,12 @@ var copiedInput = document.querySelector(".copied"); // Copied input
 var generatePassBtn = document.querySelector("#btn"); // Password Generator Button
 
 // Demo Driver-JS
-
 var demo = document.getElementById("demo");
 
 const driver = window.driver.js.driver;
 
 const driverObj = driver({
+  popoverClass: "driverjs-theme",
   showProgress: true,
   steps: [
     {
