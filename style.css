@@ -87,7 +87,7 @@ i.p-hidden {
   color: #ff5733;
 }
 .empty {
-  color: #ff5733;
+  color: red;
 }
 /* <!-- Range Bar --> */
 #rangeBar {
