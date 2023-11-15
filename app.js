@@ -71,9 +71,9 @@ demo.addEventListener("click", () => {
 });
 
 // Show & Hide Password
+var showPassword = document.querySelector(".passIcon"); // Icon Container
 var passShowIcon = document.querySelector(".p-show"); // Password Show icon
 var passHideIcon = document.querySelector(".p-hidden"); // Password Hide icon
-var showPassword = document.querySelector(".passIcon"); // Password Hide icon
 showPassword.addEventListener("click", () => {
   if (inputDisplay.type === "password") {
     inputDisplay.type = "text";
@@ -91,6 +91,7 @@ var rangeBar = document.querySelector("#rangeBar"); // Range Bar
 var showRangebarValue = document.querySelector("#rangeDisplay"); // Show Range Bar Values
 rangeBar.addEventListener("change", () => {
   if (rangeBar.value < 10) {
+    // If count lessthen 10 the added a zero in numbers
     showRangebarValue.innerHTML = 0 + rangeBar.value;
   } else {
     showRangebarValue.innerHTML = rangeBar.value;
@@ -116,7 +117,7 @@ clipBoard.addEventListener("click", () => {
 
 var strongPass = document.querySelector(".strongPass"); // Strong Password Div
 var weakPass = document.querySelector(".weakPass"); // Weak Password Div
-
+// Password generation
 function generatePass() {
   empty.display = "none";
   copiedInput.style.display = "none";
@@ -126,7 +127,7 @@ function generatePass() {
   var smallLetters = document.querySelector("#smallLetters"); // Small Letters Check Box
   var numbers = document.querySelector("#numbers"); // Numbers Check Box
   var specialCharacterCheckbox = document.querySelector("#specialCharacters"); // Special Characters Check Box
-
+  // Inside password characters
   var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
   var specialCharacters = "!@#$%^&*(/)_<=]{,+}[|;.>:'?-";
@@ -142,14 +143,14 @@ function generatePass() {
     }
     return checkedValue;
   }
-
   var capitalLettersChecked = getCheckedValues([capitalLetters]);
   var smallLettersChecked = getCheckedValues([smallLetters]);
   var numbersChecked = getCheckedValues([numbers]);
   var specialCharactersChecked = getCheckedValues([specialCharacterCheckbox]);
 
-  var pass = [];
+  var pass = []; // array for random number
 
+  // If checkbox checked the push there value in the above array
   if (capitalLettersChecked.length > 0) {
     pass.push(...uppercaseLetters);
   }
@@ -163,7 +164,7 @@ function generatePass() {
     pass.push(...specialCharacters);
   }
   var generatePassword = "";
-
+  // Loop for generating password
   for (var i = 0; i < rangeBar.value; i++) {
     var getPass = pass[Math.floor(Math.random() * pass.length)];
     generatePassword += getPass;
@@ -172,7 +173,7 @@ function generatePass() {
       break;
     }
   }
-
+  // Generated password validation
   if (
     generatePassword.length >= 8 &&
     capitalLettersChecked.length > 0 &&
@@ -186,6 +187,6 @@ function generatePass() {
     weakPass.style.display = "block";
     strongPass.style.display = "none";
   }
-
+  // Display password
   inputDisplay.value = generatePassword;
 }
