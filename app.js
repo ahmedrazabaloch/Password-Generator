@@ -1,5 +1,4 @@
 var inputDisplay = document.getElementById("inputDisplay"); // Display input
-
 var clipBoard = document.querySelector("#clipBoard"); // Weak Password Div
 var copyInput = document.querySelector(".copy"); // Copy input
 var copiedInput = document.querySelector(".copied"); // Copied input
