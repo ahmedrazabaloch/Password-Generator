@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,32 +10,31 @@
 body {
   background-color: #ffd700;
 }
+
 .container {
   width: 100%;
 }
+
 .box {
-  width: 60%;
-  padding: 50px;
+  width: 80%; /* Adjust the width for smaller screens */
+  max-width: 600px; /* Limit width on larger screens */
+  padding: 30px;
   background-color: #fff;
   margin: 50px auto;
   border-radius: 15px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
+
 .demo-Heading {
-  /* position: relative; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
+
 #demo {
   padding: 10px 20px;
-  /* position: absolute; */
-  /* left: 0px; */
   border: 1px solid #ffa400;
   background: transparent;
   border-radius: 5px;
@@ -43,20 +43,20 @@ body {
   height: 40px;
   transition: all 0.3s linear;
 }
+
 #demo:hover {
   background-color: #ffa400;
   color: #fff;
 }
+
 .box h1 {
-  /* width: 100%;
-  margin: 0 auto;
-  margin-bottom: 35px; */
   font-size: 2.5em;
 }
+
 .display {
   position: relative;
 }
-/* <!-- Display Value Input --> */
+
 #inputDisplay {
   width: 100%;
   padding: 5px 10px;
@@ -65,7 +65,7 @@ body {
   border-radius: 5px;
   border: 1px solid #ffa400;
 }
-/* <!-- Password Show/Hidden --> */
+
 .passIcon {
   padding: 10px 15px;
   font-size: 24px;
@@ -74,10 +74,11 @@ body {
   right: 0;
   cursor: pointer;
 }
+
 i.p-hidden {
   display: none;
 }
-/* <!-- Dialogue Box --> */
+
 .dialogueBox {
   display: flex;
   justify-content: space-between;
@@ -85,6 +86,7 @@ i.p-hidden {
   margin: 10px 0;
   user-select: none;
 }
+
 .copy,
 .copied {
   padding: 5px 10px;
@@ -93,41 +95,48 @@ i.p-hidden {
   transition: all 0.3s linear;
   border: 1px solid #ffa400;
 }
+
 .copy:hover {
   background-color: #ffa400;
   color: #fff;
 }
+
 .copied {
   display: none;
 }
+
 .copied:hover {
   cursor: url("checkdouble.svg"), auto;
 }
-/* <!-- Password Checker --> */
+
 .strongPass > i {
   color: green;
 }
+
 .strongPass,
 .weakPass,
 .empty,
 .emptyCheckBox {
   display: none;
 }
+
 .weakPass > i {
   color: #ff5733;
 }
+
 .empty {
   color: red;
 }
-/* <!-- Range Bar --> */
+
 #rangeBar {
   width: 100%;
 }
+
 span#rangeDisplay {
   margin-left: 5px;
   font-weight: 600;
 }
-/* <!-- CheckBox --> */
+
 .checkBox-Container {
   display: flex;
   justify-content: space-between;
@@ -135,14 +144,16 @@ span#rangeDisplay {
   margin: 10px 0;
   user-select: none;
 }
+
 .checkboxes {
   display: flex;
   align-items: center;
 }
+
 .checkboxes input[type="checkbox"] {
   margin: 0 3px 0 10px;
 }
-/* <!-- Button --> */
+
 #btn {
   padding: 15px;
   font-size: 18px;
@@ -155,7 +166,37 @@ span#rangeDisplay {
   border: 1px solid #ffa400;
   font-weight: 500;
 }
+
 #btn:hover {
   background-color: #ffa400;
   color: #fff;
+}
+
+/* Media Queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  .box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .box h1 {
+    font-size: 2em;
+  }
+
+  #btn {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #inputDisplay::placeholder {
+    font-size: 18px;
+  }
+  .checkBox-Container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  label {
+    width: max-content;
+  }
 }
