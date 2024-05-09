@@ -16,8 +16,8 @@ body {
 }
 
 .box {
-  width: 80%; /* Adjust the width for smaller screens */
-  max-width: 600px; /* Limit width on larger screens */
+  width: 80%;
+  max-width: 600px;
   padding: 30px;
   background-color: #fff;
   margin: 50px auto;
@@ -189,6 +189,12 @@ span#rangeDisplay {
   }
 }
 @media only screen and (max-width: 500px) {
+  .box {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
   #inputDisplay::placeholder {
     font-size: 18px;
   }
